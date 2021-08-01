@@ -38,19 +38,26 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Row>
       <Col md={8}>
-        <h1>Shopping Cart</h1>
+        <h1 className="my-4">Shopping Cart</h1>
         {cartItems.length === 0 ? (
-          <Link to="/">Go Back</Link>
+          <Link className="btn-info" to="/">
+            Go Back
+          </Link>
         ) : (
           <ListGroup variant="flush">
             {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
+              <ListGroup.Item className="pop2-shadow" key={item.product}>
                 <Row>
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    <Link
+                      className="text-decoration-none"
+                      to={`/product/${item.product}`}
+                    >
+                      {item.name}
+                    </Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>
@@ -92,18 +99,22 @@ const CartScreen = ({ match, location, history }) => {
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                Total ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 items
               </h2>
-              $
-              {cartItems
-                .reduce((acc, item) => acc + item.qty * item.price, 0)
-                .toFixed(2)}
+              <h2>
+                <strong>
+                  $
+                  {cartItems
+                    .reduce((acc, item) => acc + item.qty * item.price, 0)
+                    .toFixed(2)}
+                </strong>
+              </h2>
             </ListGroup.Item>
             <ListGroup.Item>
               <Button
                 type="button"
-                className="btn-block"
+                className="btn-block w-100 btn-info button-shadow"
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >

@@ -38,11 +38,11 @@ const RegisterScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign Up</h1>
       {error && <Alert variant="danger">{error}</Alert>}
       {message && <Alert variant="danger">{message}</Alert>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <Form className="pop1-shadow p-4" onSubmit={submitHandler}>
+        <h1>Sign Up</h1>
         <Form.Group controlId="name" className="pb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control
@@ -79,14 +79,21 @@ const RegisterScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button
+          type="submit"
+          className="d-block ms-auto button-shadow"
+          variant="info"
+        >
           Register
         </Button>
       </Form>
       <Row className="py-3">
         <Col>
           Have an account?
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+          <Link
+            className="text-decoration-none text-info"
+            to={redirect ? `/login?redirect=${redirect}` : "/login"}
+          >
             &nbsp;Login
           </Link>
         </Col>

@@ -81,7 +81,7 @@ const PlaceOrderScreen = ({ history }) => {
               {cart.cartItems.length === 0 ? (
                 <Message>Your cart is empty</Message>
               ) : (
-                <ListGroup variant="flush">
+                <ListGroup className="pop2-shadow p-4" variant="flush">
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
@@ -94,7 +94,10 @@ const PlaceOrderScreen = ({ history }) => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link
+                            className="text-decoration-none"
+                            to={`/product/${item.product}`}
+                          >
                             {item.name}
                           </Link>
                         </Col>
@@ -145,9 +148,10 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Button
                   type="button"
-                  className="btn-block"
+                  className="btn-block button-shadow w-100"
                   disabled={cart.cartItmes === 0}
                   onClick={placeOrderHandler}
+                  variant="warning"
                 >
                   Place Order
                 </Button>

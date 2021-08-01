@@ -93,11 +93,10 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to="/admin/productlist" className="btn btn-light my-3">
+      <Link to="/admin/productlist" className="btn btn-info my-3">
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Alert variant="danger">{errorUpdate}</Alert>}
         {loading ? (
@@ -105,7 +104,8 @@ const ProductEditScreen = ({ match, history }) => {
         ) : error ? (
           <Alert variant="danger">{error}</Alert>
         ) : (
-          <Form onSubmit={submitHandler}>
+          <Form className="pop1-shadow p-4" onSubmit={submitHandler}>
+            <h1>Edit Product</h1>
             <Form.Group controlId="name" className="pb-3">
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -183,7 +183,11 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button
+              type="submit"
+              className="d-block ms-auto button-shadow"
+              variant="warning"
+            >
               Update
             </Button>
           </Form>

@@ -54,12 +54,12 @@ const ProfileScreen = ({ location, history }) => {
   return (
     <Row>
       <Col md={3}>
-        <h2>User Profile</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         {message && <Alert variant="danger">{message}</Alert>}
         {success && <Alert variant="success">Profile Updated</Alert>}
         {loading && <Loader />}
-        <Form onSubmit={submitHandler}>
+        <Form className="pop1-shadow p-4" onSubmit={submitHandler}>
+          <h2>User Profile</h2>
           <Form.Group controlId="name" className="pb-3">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -98,12 +98,16 @@ const ProfileScreen = ({ location, history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type="submit" variant="primary">
+          <Button
+            type="submit"
+            variant="success"
+            className="button-shadow d-block ms-auto"
+          >
             Update
           </Button>
         </Form>
       </Col>
-      <Col md={9}>
+      <Col className="pop1-shadow p-3" md={9}>
         <h2>My Orders</h2>
         {loadingOrders ? (
           <Loader />

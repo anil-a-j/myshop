@@ -17,13 +17,13 @@ const SearchBox = ({ history }) => {
     <Form onSubmit={submitHandler} style={{ display: "flex" }}>
       <Form.Control
         type="text"
-        name="q"
+        name=""
         onChange={(e) => setKeyword(e.target.value)}
         placeholder="Search Products"
-        className="ms-sm-2 me-sm-5"
+        className="ms-sm-2  rounded-pill border border-success"
       ></Form.Control>
-      <Button type="submit" variant="outline-success" className="p-2">
-        Search
+      <Button type="submit" variant="success" className="mx-2 button-shadow">
+        <i className="fas fa-search fs-5"></i>
       </Button>
     </Form>
   );

@@ -43,11 +43,10 @@ const UserEditScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to="/admin/userlist" className="btn btn-light my-3">
+      <Link to="/admin/userlist" className="btn btn-info my-3">
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit User</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Alert variant="danger">{errorUpdate}</Alert>}
         {loading ? (
@@ -55,7 +54,8 @@ const UserEditScreen = ({ match, history }) => {
         ) : error ? (
           <Alert variant="danger">{error}</Alert>
         ) : (
-          <Form onSubmit={submitHandler}>
+          <Form className="pop1-shadow p-4 my-5" onSubmit={submitHandler}>
+            <h1>Edit User</h1>
             <Form.Group controlId="name" className="pb-3">
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -85,7 +85,11 @@ const UserEditScreen = ({ match, history }) => {
               ></Form.Check>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button
+              type="submit"
+              className="button-shadow d-block ms-auto"
+              variant="warning"
+            >
               Update
             </Button>
           </Form>

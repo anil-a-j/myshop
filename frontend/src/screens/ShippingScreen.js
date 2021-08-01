@@ -23,56 +23,58 @@ const ShippingScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
-      <Form onSubmit={submitHandler}>
-        <Form.Group controlId="Address" className="pb-3">
-          <Form.Label>Address</Form.Label>
-          <Form.Control
-            type="text"
-            value={address}
-            placeholder="Enter your address"
-            required
-            onChange={(e) => setAddress(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+      <div className="pop2-shadow p-4">
+        <h1>Shipping</h1>
+        <Form onSubmit={submitHandler}>
+          <Form.Group controlId="Address" className="pb-3">
+            <Form.Label>Address</Form.Label>
+            <Form.Control
+              type="text"
+              value={address}
+              placeholder="Enter your address"
+              required
+              onChange={(e) => setAddress(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
 
-        <Form.Group controlId="City" className="pb-3">
-          <Form.Label>City</Form.Label>
-          <Form.Control
-            type="text"
-            value={city}
-            placeholder="Enter your City"
-            required
-            onChange={(e) => setCity(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+          <Form.Group controlId="City" className="pb-3">
+            <Form.Label>City</Form.Label>
+            <Form.Control
+              type="text"
+              value={city}
+              placeholder="Enter your City"
+              required
+              onChange={(e) => setCity(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
 
-        <Form.Group controlId="postaCode" className="pb-3">
-          <Form.Label>Postal Code</Form.Label>
-          <Form.Control
-            type="text"
-            value={postalCode}
-            placeholder="Enter your Postal code"
-            required
-            onChange={(e) => setPostalCode(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+          <Form.Group controlId="postaCode" className="pb-3">
+            <Form.Label>Postal Code</Form.Label>
+            <Form.Control
+              type="text"
+              value={postalCode}
+              placeholder="Enter your Postal code"
+              required
+              onChange={(e) => setPostalCode(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
 
-        <Form.Group controlId="Country" className="pb-3">
-          <Form.Label>Country</Form.Label>
-          <Form.Control
-            type="text"
-            value={country}
-            placeholder="Enter your Country"
-            required
-            onChange={(e) => setCountry(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+          <Form.Group controlId="Country" className="pb-3">
+            <Form.Label>Country</Form.Label>
+            <Form.Control
+              type="text"
+              value={country}
+              placeholder="Enter your Country"
+              required
+              onChange={(e) => setCountry(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
 
-        <Button type="submit" variant="primary">
-          Continue
-        </Button>
-      </Form>
+          <Button type="submit" variant="warning">
+            Continue
+          </Button>
+        </Form>
+      </div>
     </FormContainer>
   );
 };

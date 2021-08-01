@@ -142,7 +142,10 @@ const OrderScreen = ({ match, history }) => {
               ) : (
                 <ListGroup variant="flush">
                   {order.orderItems.map((item, index) => (
-                    <ListGroup.Item key={index}>
+                    <ListGroup.Item
+                      className="pop1-shadow mb-4 p-4"
+                      key={index}
+                    >
                       <Row>
                         <Col md={1}>
                           <Image
@@ -153,7 +156,10 @@ const OrderScreen = ({ match, history }) => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link
+                            className="text-decoration-none"
+                            to={`/product/${item.product}`}
+                          >
                             {item.name}
                           </Link>
                         </Col>

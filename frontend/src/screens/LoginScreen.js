@@ -29,10 +29,10 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
       {error && <Alert variant="danger">{error}</Alert>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <Form className="pop1-shadow p-4" onSubmit={submitHandler}>
+        <h1>Sign In</h1>
         <Form.Group controlId="email" className="pb-3">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -51,7 +51,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="info" className="d-block ms-auto">
           Sign In
         </Button>
       </Form>
@@ -59,7 +59,10 @@ const LoginScreen = ({ location, history }) => {
       <Row className="py-3">
         <Col>
           New Customer?
-          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
+          <Link
+            className="text-decoration-none text-info"
+            to={redirect ? `/register?redirect=${redirect}` : "/register"}
+          >
             &nbsp;Register
           </Link>
         </Col>

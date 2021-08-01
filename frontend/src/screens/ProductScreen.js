@@ -18,7 +18,6 @@ import {
   createProductReview,
 } from "../actions/productActions";
 import Loader from "../components/Loader";
-import Message from "../components/Message";
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -57,13 +56,13 @@ const ProductScreen = ({ history, match }) => {
 
   return (
     <>
-      <Link className="btn btn-dark my-3" to="/">
+      <Link className="btn btn-info my-3 button-shadow" to="/">
         Go Back
       </Link>
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant="danger">{error}</Message>
+        <Alert variant="danger">{error}</Alert>
       ) : (
         <>
           <Meta title={product.name} />
@@ -82,9 +81,11 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description :{product.description}
+                  <p>Price: ${product.price}</p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>Description :{product.description}</p>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -95,7 +96,9 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Price</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <p>
+                          <strong>${product.price}</strong>
+                        </p>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -134,7 +137,7 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className="btn-block"
+                      className="btn-block w-100 btn-success button-shadow"
                       type="button"
                       disabled={product.countInStock === 0}
                     >
@@ -147,7 +150,7 @@ const ProductScreen = ({ history, match }) => {
           </Row>
           <Row>
             <Col md={6}>
-              <h2>Reviews</h2>
+              <h2 className="mt-3">Reviews</h2>
               {product.reviews.length === 0 && (
                 <Alert variant="info">No Reviews</Alert>
               )}
@@ -160,7 +163,7 @@ const ProductScreen = ({ history, match }) => {
                     <p>{review.comment}</p>
                   </ListGroup.Item>
                 ))}
-                <ListGroup.Item>
+                <ListGroup.Item className="pop1-shadow p-4 ">
                   <h2>Write a Customer review</h2>
                   {errorProductReview && (
                     <Alert variant="danger">{errorProductReview}</Alert>
@@ -168,7 +171,7 @@ const ProductScreen = ({ history, match }) => {
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group controlId="rating">
-                        <Form.Label>Rating</Form.Label>
+                        <Form.Label className="pt-2">Rating</Form.Label>
                         <Form.Control
                           as="select"
                           value={rating}
@@ -183,7 +186,7 @@ const ProductScreen = ({ history, match }) => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group>
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label className="pt-2">Comment</Form.Label>
                         <Form.Control
                           as="textarea"
                           row="3"
@@ -191,7 +194,10 @@ const ProductScreen = ({ history, match }) => {
                           onChange={(e) => setComment(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
-                      <Button type="submit" variant="primary">
+                      <Button
+                        type="submit"
+                        className="bg-gold button-shadow mt-4 d-block ms-auto"
+                      >
                         Submit
                       </Button>
                     </Form>

@@ -16,11 +16,11 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+    <header className="shadow-bottom">
+      <Navbar expand="lg" className="bg-offwhite" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>MyShop</Navbar.Brand>
+            <Navbar.Brand className="bold-font">MyShop</Navbar.Brand>
           </LinkContainer>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

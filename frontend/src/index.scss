@@ -1,0 +1,158 @@
+/* font caveat */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+
+/* font quicksand */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+/* colors */
+$offwhite: #f5f4f4;
+$lightblack: #242423;
+$lightblue: #33a7ff;
+$lightgold: rgb(228, 203, 64);
+
+/* custom styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+h6 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+
+h5,
+h6 {
+  text-transform: none;
+}
+
+p,
+label {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+label {
+  font-style: italic;
+}
+
+.bold-font {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: none;
+}
+
+.nav-link {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  color: $lightblack !important;
+}
+
+.card {
+  .card-body {
+    a {
+      text-decoration: none;
+    }
+  }
+  h3 {
+    text-align: right;
+    color: $lightblue;
+  }
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.bg-offwhite {
+  background-color: $offwhite;
+}
+
+.bg-gold {
+  background-color: $lightgold !important;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.carousel {
+  position: relative;
+  .carousel-inner {
+    .carousel-item {
+      max-height: 500px;
+      img {
+        width: 100%;
+      }
+    }
+    &:hover {
+      filter: invert(100%);
+      background-color: black;
+    }
+  }
+  .carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    transition: all 0.5s;
+    li {
+      width: calc(100% / 3);
+      height: 4px;
+      background-color: $lightblack;
+      &.active {
+        background: $lightblue;
+      }
+    }
+  }
+  h2 {
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    background-color: $lightblack;
+    color: white;
+  }
+  .carousel-item {
+    .carousel-caption {
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+    }
+  }
+}
+
+/* shadow section */
+
+.pop1-shadow {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.pop2-shadow {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.product-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.shadow-bottom {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 9px 0px;
+}
+
+.button-shadow {
+  transition: all 0.5s;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+}

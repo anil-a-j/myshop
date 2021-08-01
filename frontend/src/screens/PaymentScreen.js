@@ -24,8 +24,9 @@ const PaymentScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
-      <Form onSubmit={submitHandler}>
+
+      <Form className="pop2-shadow p-4" onSubmit={submitHandler}>
+        <h1>Payment Method</h1>
         <Form.Group className="pb-3">
           <Form.Label as="legend">Select Method</Form.Label>
           <Row>
@@ -50,7 +51,7 @@ const PaymentScreen = ({ history }) => {
             </Col>
           </Row>
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="warning">
           Continue
         </Button>
       </Form>
