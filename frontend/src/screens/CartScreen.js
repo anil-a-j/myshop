@@ -40,7 +40,10 @@ const CartScreen = ({ match, location, history }) => {
       <Col md={8}>
         <h1 className="my-4">Shopping Cart</h1>
         {cartItems.length === 0 ? (
-          <Link className="btn-info" to="/">
+          <Link
+            className="btn-info p-2 text-decoration-none button-shadow"
+            to="/"
+          >
             Go Back
           </Link>
         ) : (

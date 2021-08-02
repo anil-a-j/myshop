@@ -99,7 +99,6 @@ const getOrders = asyncHandler(async (req, res) => {
 // @access Private/Admin
 const updateOrderToDelivered = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
-  console.log(req.params.id);
   if (order) {
     order.isDelivered = true;
     order.deliveredAt = Date.now();
